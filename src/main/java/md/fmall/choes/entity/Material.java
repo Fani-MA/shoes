@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -21,4 +23,10 @@ public class Material {
     @NotNull
     @Column(nullable = false)
     String name;
+
+    @ManyToMany(mappedBy = "topMaterials")
+    Set<Material> topMaterial;
+
+    @ManyToMany(mappedBy = "bottomMaterials")
+    Set<Material> bottomMaterial;
 }
