@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  datasource:
+    username: misha
+    password: fullmetal
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5436/chose
+  application:
+    name: choes
+
+server:
+  port: 8085
