@@ -38,3 +38,4 @@ out/
 
 .env
 gradl*
+src/main/resources/db
