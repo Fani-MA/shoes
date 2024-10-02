@@ -1,4 +1,4 @@
-package md.fmall.choes;
+package md.fmall.shoes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

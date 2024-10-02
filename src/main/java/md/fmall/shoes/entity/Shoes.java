@@ -1,13 +1,11 @@
-package md.fmall.choes.entity;
+package md.fmall.shoes.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.DialectOverride;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -15,8 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "choes")
-public class Choes {
+@Table(name = "shoes")
+public class Shoes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -26,8 +24,8 @@ public class Choes {
     Long article;
 
     @ManyToMany
-    @JoinTable(name = "chose_model",
-            joinColumns = @JoinColumn(name = "choes_id"),
+    @JoinTable(name = "shose_model",
+            joinColumns = @JoinColumn(name = "shoes_id"),
             inverseJoinColumns = @JoinColumn(name = "size_id"))
     List<Size> sizes;
 

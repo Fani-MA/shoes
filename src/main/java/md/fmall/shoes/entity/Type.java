@@ -1,4 +1,4 @@
-package md.fmall.choes.entity;
+package md.fmall.shoes.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

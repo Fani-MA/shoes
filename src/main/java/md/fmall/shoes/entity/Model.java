@@ -1,4 +1,4 @@
-package md.fmall.choes.entity;
+package md.fmall.shoes.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -38,5 +38,5 @@ public class Model {
     List<Material> bottomMaterials = new ArrayList<>();
 
     @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
-    List<Choes> choes = new ArrayList<>();
+    List<Shoes> choes = new ArrayList<>();
 }
