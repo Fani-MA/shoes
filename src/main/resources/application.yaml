@@ -3,14 +3,17 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+#  thymeleaf:
+#    prefix: classpath:/templates
+#    suffix: .html
 
   datasource:
     username: misha
     password: fullmetal
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5436/chose
+    url: jdbc:postgresql://localhost:5436/shoes
   application:
-    name: choes
+    name: shoes
 
 server:
   port: 8085
