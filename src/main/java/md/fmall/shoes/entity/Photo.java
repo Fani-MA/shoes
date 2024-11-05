@@ -6,23 +6,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.HashSet;
-import java.util.Set;
-
+@Entity
+@Table(name = "photos")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "type")
-public class Type {
-
+public class Photo {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String type;
+    String path;
 
-    @OneToMany(mappedBy = "type")
-    Set<Model> models = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "model_id")
+    Model model;
 }

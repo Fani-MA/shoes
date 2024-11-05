@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -20,22 +22,28 @@ public class Model {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String name;
+    @OneToMany(mappedBy = "model")
+    Set<Photo> photos;
 
     @ManyToOne
+    @JoinColumn(name = "type_id")
     Type type;
+
+    @ManyToOne
+    @JoinColumn(name = "gender_type_id")
+    GenderType genderType;
 
     @ManyToMany
     @JoinTable(name = "top_materials",
             joinColumns = @JoinColumn(name = "model_id"),
             inverseJoinColumns = @JoinColumn(name = "material_id"))
-    List<Material> topMaterials = new ArrayList<>();
+    Set<Material> topMaterials = new HashSet<>();
 
     @ManyToMany
     @JoinTable(name = "bottom_materials",
             joinColumns = @JoinColumn(name = "model_id"),
             inverseJoinColumns = @JoinColumn(name = "material_id"))
-    List<Material> bottomMaterials = new ArrayList<>();
+    Set<Material> bottomMaterials = new HashSet<>();
 
     @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
     List<Shoes> choes = new ArrayList<>();

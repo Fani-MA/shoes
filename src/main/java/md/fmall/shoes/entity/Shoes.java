@@ -36,5 +36,4 @@ public class Shoes {
     @ManyToOne
     @JoinColumn(name = "color_id", nullable = false)
     Color color;
-
 }

@@ -25,8 +25,8 @@ public class Material {
     String name;
 
     @ManyToMany(mappedBy = "topMaterials")
-    Set<Material> topMaterial;
+    Set<Model> topMaterialModels;
 
     @ManyToMany(mappedBy = "bottomMaterials")
-    Set<Material> bottomMaterial;
+    Set<Model> bottomMaterialModels;
 }
