@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   chose:
-    image: chose
+    image: shoes
     container_name: chose_app
     build:
       context: .
@@ -16,7 +16,7 @@ services:
 
   db:
     image: postgres:16.3
-    container_name: chose_db
+    container_name: shoes_db
     restart: always
     volumes:
       - dev_pg_data:/var/lib/postgresql/data
@@ -25,9 +25,9 @@ services:
     environment:
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: chose
+      POSTGRES_DB: shoes
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U ${DB_USERNAME} -d chose" ]
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USERNAME} -d shoes" ]
 
 volumes:
   dev_pg_data:
